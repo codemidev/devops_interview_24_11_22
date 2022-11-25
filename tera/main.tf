@@ -1,56 +1,71 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.16"
-    }
-  }
+resource "aws_instance" "web" {
+ami =""
+instance_type = ""
+count = 1
+ tags{
+ name ="Ubuntun ec2"
 
-  required_version = ">= 1.2.0"
 }
 
-provider "aws" {
-  region  = "us-west-2"
-}
-
-resource "aws_instance" "app_server" {
-  ami           = "#ubuntu instance"
-  instance_type = "t2.micro"
-  key_name ="#keynane"
-
-  tags = {
-    Name = "ExampleAppServerInstance"
-  }
 }
 
 
+resource "aws_security_group" "TF_SG" {
 
+name =""
+description =""
+vpc_id =""
 
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.16"
-    }
-  }
-
-  required_version = ">= 1.2.0"
 }
 
-provider "aws" {
-  region  = "us-west-2"
+ingress {
+
+description =HTTPS"
+from_port = 443
+to_port = 443
+protocol ="tcp"
+cdir.blocks = [0.0.0.0:0/0]
+ipv6.cdir.blocks = [::/0]
+
 }
 
-resource "aws_instance" "app_server" {
-  ami           = "#windowsfor"
-  instance_type = "t2.micro"
-  key_name ="#keynane"
+ingress {
 
-  tags = {
-    Name = "Ocent"
-  }
+description =HTTP"
+from_port = 80
+to_port = 80
+protocol ="tcp"
+cdir.blocks = [0.0.0.0:0/0]
+ipv6.cdir.blocks = [::/0]
+
 }
 
-~
-~
-~
+ingress {
+
+description =SSH"
+from_port = 22
+to_port = 22
+protocol ="tcp"
+cdir.blocks = [0.0.0.0:0/0]
+ipv6.cdir.blocks = [::/0]
+
+}
+
+
+
+engress {
+from_port = 0
+to_port = 0
+protocol = "-1"
+cdir.blocks = [0.0.0.0:0/0]
+ipv6.cdir.blocks = [::/0]
+
+tags {
+name ="TG_SF"
+}
+
+}
+
+
+
+
