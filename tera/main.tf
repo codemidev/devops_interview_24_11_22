@@ -2,6 +2,8 @@ resource "aws_instance" "web" {
 ami =""
 instance_type = ""
 count = 1
+security_groups = [aws_security_group.TF_SG.name]
+
  tags{
  name ="Ubuntun ec2"
 
