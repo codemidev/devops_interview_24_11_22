@@ -1,5 +1,3 @@
 provider "aws" {
-region = ""
-acces_key = ""
-secrect_key = ""
+region = "us-west-2"
 }
