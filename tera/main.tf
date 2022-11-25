@@ -22,7 +22,7 @@ vpc_id =""
 
 ingress {
 
-description =HTTPS"
+description ="HTTPS"
 from_port = 443
 to_port = 443
 protocol ="tcp"
@@ -33,7 +33,7 @@ ipv6.cdir.blocks = [::/0]
 
 ingress {
 
-description =HTTP"
+description ="HTTP"
 from_port = 80
 to_port = 80
 protocol ="tcp"
@@ -44,7 +44,7 @@ ipv6.cdir.blocks = [::/0]
 
 ingress {
 
-description =SSH"
+description ="SSH"
 from_port = 22
 to_port = 22
 protocol ="tcp"
