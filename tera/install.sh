@@ -9,4 +9,4 @@ echo -n -e "packages installed\n"
 echo -n -e "Strating Tera ec2 instances\n"
 ls
 ps
-
+./runtf.sh
